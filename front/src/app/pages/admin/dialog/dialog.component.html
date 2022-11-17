@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Informações do {{ data.nome }}</h1>
+<div mat-dialog-content>
+    <p>Número de Registro: {{ data.numReg }} </p>
+    <p>Telefone: {{ data.telefone }}</p>
+    <p>Cargo: {{ data.cargo }}</p>
+    <p>Formação: {{ data.formacao }}</p>
+    <p>Hora de Trabalho: {{ data.horaTrabalho }}</p>
+
+    <p *ngFor="let endereco of data.enderecos">
+        Endereço: {{ endereco.rua }}, {{ endereco.num }}, {{ endereco.bairro }}
+    </p>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close cdkFocusInitial color="primary"> OK </button>
+</div>

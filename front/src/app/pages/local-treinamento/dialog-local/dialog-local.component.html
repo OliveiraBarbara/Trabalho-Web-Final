@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Informações da {{ data.nome }}</h1>
+<div mat-dialog-content>
+    <p>Valor: R${{ data.valor }} </p>
+    <p>Horário de Funcionamento: {{ data.horaFunc }}</p>
+
+    <p *ngFor="let endereco of data.enderecos">
+        Endereço: {{ endereco.rua }}, {{ endereco.num }}, {{ endereco.bairro }}
+    </p>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close cdkFocusInitial color="primary"> OK </button>
+</div>
