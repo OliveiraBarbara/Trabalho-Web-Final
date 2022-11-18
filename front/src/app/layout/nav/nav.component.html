@@ -1,0 +1,30 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/home">
+                <i class="material-icons">home</i> Home
+            </a>
+            <a mat-list-item routerLink="/admin">
+                <i class="material-icons">supervisor_account</i> Administrador
+            </a>
+            <a mat-list-item routerLink="/cliente">
+                <i class="material-icons">supervisor_account</i> Atletas
+            </a>
+            <a mat-list-item routerLink="/instrutor">
+                <i class="material-icons">fitness_center</i> Instrutores
+            </a>
+            <a mat-list-item routerLink="/preferencia" *ngIf="checkRole(['cliente'])">
+                <i class="material-icons">swap_horiz</i> Preferências
+            </a>
+            <a mat-list-item routerLink="/localTreinamento" *ngIf="checkRole(['instrutor'])">
+                <i class="material-icons">place</i> Locais de Treinamento
+            </a>
+            <a mat-list-item routerLink="/exercicio" *ngIf="checkRole(['instrutor'])">
+                <i class="material-icons">fitness_center</i> Exercícios
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

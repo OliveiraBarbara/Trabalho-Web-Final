@@ -33,7 +33,7 @@ export class CidadeController {
   findAll(
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10,
-    @Query('search') search: string,
+    @Query('search') search: string
   ) {
     return this.cidadeService.findAll({ page, limit }, search);
   }
@@ -47,7 +47,7 @@ export class CidadeController {
   @Patch(':id')
   update(
     @Param('id', ParseIntPipe) id: number,
-    @Body() updateCidadeDto: UpdateCidadeDto,
+    @Body() updateCidadeDto: UpdateCidadeDto
   ) {
     return this.cidadeService.update(id, updateCidadeDto);
   }

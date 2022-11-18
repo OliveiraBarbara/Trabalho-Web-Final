@@ -1,0 +1,32 @@
+<mat-toolbar class="header mat-elevation-z4">
+    <span>
+    <a routerLink="/" class="a">
+      <img class="logo" src="assets/imagens/runmazing.png" alt="logo"/>
+    </a>
+  </span>
+    <span class="title-group">
+    RUNMAZING
+    </span>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu">
+        <i class="material-icons">person</i>
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+        <a routerLink="/home/menu"> 
+          <i class="material-icons">keyboard_arrow_right</i>
+          Criar uma conta</a>
+    </button>
+        <button mat-menu-item>
+          <a routerLink="/login"> 
+            <i class="material-icons">keyboard_arrow_right</i>
+            Login</a>
+      </button>
+        <button mat-menu-item> 
+          <a routerLink="/login">
+            <i class="material-icons">keyboard_arrow_right</i>
+            Sair</a>
+      </button>
+    </mat-menu>
+</mat-toolbar>
